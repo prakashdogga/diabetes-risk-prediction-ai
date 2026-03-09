@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetes Risk Prediction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">CarePredict</div>
+      <div class="subtitle">Early Diabetes Risk Screening</div>
+    </header>
+
+    <main class="main">
+      <section class="card form-card">
+        <h2>Patient Vitals & Habits</h2>
+        <p class="helper">
+          Enter latest measurements to estimate diabetes risk. This tool is for screening, not diagnosis.
+        </p>
+
+        <form id="risk-form">
+          <div class="grid">
+            <div class="field">
+              <label for="pregnancies">Pregnancies</label>
+              <input type="number" id="pregnancies" min="0" step="1" required>
+            </div>
+
+            <div class="field">
+              <label for="glucose">Glucose (mg/dL)</label>
+              <input type="number" id="glucose" min="0" step="0.1" required>
+            </div>
+
+            <div class="field">
+              <label for="blood_pressure">Blood Pressure (mm Hg)</label>
+              <input type="number" id="blood_pressure" min="0" step="0.1" required>
+            </div>
+
+            <div class="field">
+              <label for="skin_thickness">Skin Thickness (mm)</label>
+              <input type="number" id="skin_thickness" min="0" step="0.1" required>
+            </div>
+
+            <div class="field">
+              <label for="insulin">Insulin (mu U/mL)</label>
+              <input type="number" id="insulin" min="0" step="0.1" required>
+            </div>
+
+            <div class="field">
+              <label for="bmi">BMI</label>
+              <input type="number" id="bmi" min="0" step="0.1" required>
+            </div>
+
+            <div class="field">
+              <label for="diabetes_pedigree">Diabetes Pedigree Function</label>
+              <input type="number" id="diabetes_pedigree" min="0" step="0.01" required>
+            </div>
+
+            <div class="field">
+              <label for="age">Age (years)</label>
+              <input type="number" id="age" min="1" step="1" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">Predict Risk</button>
+        </form>
+      </section>
+
+      <section class="card result-card" id="result-card" hidden>
+        <h2>Risk Assessment</h2>
+        <div id="risk-pill" class="risk-pill">Risk: -</div>
+        <div class="probability">
+          Estimated probability of diabetes:
+          <span id="probability-value">-</span>
+        </div>
+        <p id="advice-text" class="advice"></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      For clinical use only; does not replace a qualified physician's judgement.
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
